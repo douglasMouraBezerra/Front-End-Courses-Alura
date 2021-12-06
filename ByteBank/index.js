@@ -1,45 +1,20 @@
-/*
-    Orientacao a Objetos com JS
-*/
 
-class Cliente {
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./ContaCorrente.js";
 
-    nome;
-    cpf;
-    agencia;
-    saldo;
-
-}
+const c1 = new Cliente("Douglas","08651097450");
+const c2 = new Cliente("Luis","12345667889");
 
 
+const conta1 = new ContaCorrente(1581,50,c1);
+const conta2 = new ContaCorrente(1581,50,c2);
+
+// console.log(conta1);
+// console.log(conta2);
+
+conta1.transferir(10,conta2);
+
+console.log(conta1);
+console.log(conta2);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const clienteNome1 = 'Ricardo';
-// const cliente1CPF = '11122233309';
-// const clienteAgencia1 = 1001;
-// const cliente1Saldo = 0;
-
-
-// const clienteNome2 = 'Bugan';
-// const clienteCPF2 = '22233344409';
-// const clienteAgencia2 = 1002;
-// const clienteSaldo2 = 0;
