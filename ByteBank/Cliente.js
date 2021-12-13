@@ -2,27 +2,19 @@ export class Cliente {
 
     _nome;
     _cpf;
-    
 
     constructor(nome, cpf) {
         this._nome = nome;
         this._cpf = cpf;
-    
+
     }
 
-    setNome(nome) {
-        this._nome = nome;
+    get cpf() {
+        return this._cpf;
     }
 
-    getNome() {
+    get nome() {
         return this._nome;
     }
 
-    setCpf(cpf) {
-        this._cpf = cpf;
-    }
-
-    getCpf() {
-        return this._cpf;
-    }
 }

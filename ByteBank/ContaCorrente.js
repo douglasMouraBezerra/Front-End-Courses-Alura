@@ -5,20 +5,35 @@
     Proposta para ser aceita #variavelName
 */
 
+//lembra muito os imports do java
+import {
+    Cliente
+} from "./Cliente.js";
+
 
 export class ContaCorrente {
-
+    static numeroDeContas = 0;
     _agencia;
-    _saldo;
-    _cliente
-
-    constructor(agencia, saldo, cliente) {
-        this._agencia = agencia;
-        this._saldo = saldo;
-        this._cliente = cliente;
+    _saldo = 0;
+    _cliente;
+    
+    constructor(){
+        ContaCorrente.numeroDeContas+=1;
     }
 
-    setAgencia(numero) {
+    set cliente(cliente) {
+        try {
+
+            if (cliente instanceof Cliente) {
+                this._cliente = cliente;
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    set agencia(numero) {
         if (numero.length > 4) {
             console.log("Numero de agencia invalido");
             return;
@@ -28,17 +43,19 @@ export class ContaCorrente {
 
     }
 
+
+//*************************************** */
+
+
+
     depositar(value) {
-        if (value <= 0) {
+        if (value <= 0)
             return;
-        }
-
         this._saldo += value;
-
     }
 
     sacar(value) {
-        if(this._saldo  >= value){
+        if (this._saldo >= value) {
             this._saldo -= value;
             return value;
         }
@@ -52,6 +69,7 @@ export class ContaCorrente {
         }
         const valorSacado = this.sacar(value);
         conta.depositar(valorSacado);
-
     }
+
+
 }
